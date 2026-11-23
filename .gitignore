@@ -1,0 +1,10 @@
+# virtualenv (the claude-agent-sdk wheel alone is 170 MB)
+.venv/
+my-agent/.venv/
+
+# never commit the file the hooks example was supposed to protect
+.env
+my-agent/.env
+
+__pycache__/
+*.pyc
