@@ -2,12 +2,14 @@
 
 I ran the Agent SDK Python quickstart end to end, then tried hooks — a feature the
 quickstart links to but never walks through. Windows 11, Python 3.12.6,
-`claude-agent-sdk` 0.2.187. Everything here reproduces from [`my-agent/`](my-agent/);
-verbatim terminal output is in [`transcripts/`](transcripts/).
+`claude-agent-sdk` 0.2.187, reviewed 23 November 2026 against
+[quickstart.md](https://code.claude.com/docs/en/agent-sdk/quickstart) and
+[hooks.md](https://code.claude.com/docs/en/agent-sdk/hooks). Repro scripts in
+[`my-agent/`](my-agent/), verbatim output in [`transcripts/`](transcripts/).
 
 ## The quickstart works. Three things it tells you are wrong.
 
-Install to working agent was three commands and about 60 seconds. The agent found both
+Install to working agent was a venv plus one `pip install`, about 60 seconds. The agent found both
 bugs in `utils.py`, fixed them, and volunteered a trade-off I hadn't asked about:
 returning `0` and `""` stops the crashes but hides bad input. That was better than I
 expected. One thing nobody warns you about: the wheel is 170.1 MB.
@@ -56,11 +58,4 @@ The part that annoyed me is that you can't notice. As written the example uses
 
 ## Reproducing
 
-```bash
-cd my-agent
-py -m venv .venv && .venv\Scripts\Activate.ps1 && pip install claude-agent-sdk
-python agent.py                  # quickstart
-python hook_env.py               # hooks example, verbatim from docs
-python hook_probe.py withhook    # hook fires, returns {}, .env is written
-python hook_probe.py nohook      # control: identical result
-```
+Steps and per-finding platform scope: [REPRODUCING.md](REPRODUCING.md).

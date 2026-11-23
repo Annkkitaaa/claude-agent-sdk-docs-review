@@ -70,9 +70,11 @@ The only evidence in stdout is the model saying so in prose: *"I couldn't run a 
 because the command needed approval."* `ResultMessage.permission_denials` carries this
 structurally, but the quickstart's print loop never looks at it.
 
-**4. The agent is not hermetic.** The init message shows it loaded this machine's personal
-Claude Code configuration — slash commands that belong to my local setup, not to the
-project:
+**4. The agent is not hermetic.** The quickstart's print loop filters `SystemMessage` out,
+so this is invisible if you follow the docs. Dumping the raw stream instead
+([`../my-agent/raw_probe.py`](../my-agent/raw_probe.py)) shows the session loaded this
+machine's personal Claude Code configuration — slash commands belonging to my local setup,
+not to the project:
 
 ```
 SystemMessage(subtype='init', data={... 'slash_commands': ['deep-research', 'design',
