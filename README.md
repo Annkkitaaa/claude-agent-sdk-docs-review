@@ -55,7 +55,8 @@ The part that annoyed me is that you can't notice. As written the example uses
    `ANTHROPIC_API_KEY` is unset. Environments without them, such as CI or Docker, require
    the key."*
 
-Fix 1 is written up as an upstream issue in [ISSUE_BODY.md](ISSUE_BODY.md).
+Fix 1 is filed upstream as
+[claude-agent-sdk-python#1574](https://github.com/anthropics/claude-agent-sdk-python/issues/1574).
 
 ## Reproducing
 
