@@ -55,8 +55,10 @@ The part that annoyed me is that you can't notice. As written the example uses
    `ANTHROPIC_API_KEY` is unset. Environments without them, such as CI or Docker, require
    the key."*
 
-Fix 1 is filed upstream as
-[claude-agent-sdk-python#1574](https://github.com/anthropics/claude-agent-sdk-python/issues/1574).
+All three are filed upstream
+([#1574](https://github.com/anthropics/claude-agent-sdk-python/issues/1574),
+[#1575](https://github.com/anthropics/claude-agent-sdk-python/issues/1575)) and implemented
+with before/after proofs in [`fixes/`](fixes/).
 
 ## Reproducing
 
