@@ -27,9 +27,8 @@ through the `hasattr(block, "text")` branch, so an auth error renders as Claude'
 reasoning. `AssistantMessage.error='authentication_failed'` is sitting right there, unused.
 
 **`allowed_tools` doesn't restrict anything.** My run listed `Read, Edit, Glob` and then
-called `Write` and `Bash`. That behaviour is documented — in Key concepts, underneath the
-code that already did it. `Bash` was denied, and the only trace was the model mentioning it
-in prose.
+called `Write` and `Bash` — documented, but in Key concepts, below the code that already
+relied on it.
 
 ## The hooks example is broken on Windows
 
@@ -55,6 +54,8 @@ The part that annoyed me is that you can't notice. As written the example uses
    step 3: *"If Claude Code is installed and logged in, the SDK uses those credentials when
    `ANTHROPIC_API_KEY` is unset. Environments without them, such as CI or Docker, require
    the key."*
+
+Fix 1 is written up as an upstream issue in [ISSUE_BODY.md](ISSUE_BODY.md).
 
 ## Reproducing
 
